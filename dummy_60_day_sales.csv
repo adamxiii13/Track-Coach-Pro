@@ -1,0 +1,15 @@
+Sales By Date Range
+Example Dummy Business
+123 Fake Street,Transaction Date=2/20/2026-4/20/2026
+Suite 400
+"Anytown, NY  10001"
+555-019-8372,Report Date:,4/21/2026 1:06:27 PM
+
+
+dteTrans,cdeTrans,Product Code,Description,Customer,Qty,Total Cost of Goods ,Extended Price ,Total Gross Profit ,Margin
+4/13/2026 8:06:12 AM,A103852,012345678901,Claw Hammer 16oz,Cash Sale,4,$34.00,$59.96,$25.96,43.29%
+4/14/2026 9:15:00 AM,A103853,098765432109,Tape Measure 25ft,Cash Sale,2,$24.00,$45.98,$21.98,47.80%
+4/15/2026 10:30:22 AM,A103854,026194700000,80lb Concrete Mix,Cash Sale,10,$42.50,$65.00,$22.50,34.61%
+4/16/2026 11:45:10 AM,A103855,H,Misc hardware,Cash Sale,15,$7.50,$29.85,$22.35,74.87%
+4/17/2026 1:20:05 PM,A103856,031111111111,PVC Fitting 1/2in,Cash Sale,8,$3.60,$12.00,$8.40,70.00%
+4/18/2026 2:10:44 PM,A103857,011223344556,Duct Tape Silver,Cash Sale,5,$18.75,$39.95,$21.20,53.06%
