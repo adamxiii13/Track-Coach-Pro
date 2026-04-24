@@ -1,0 +1,80 @@
+{
+  "entities": {
+    "Session": {
+      "title": "Race Session",
+      "description": "A synchronized race session for multiple coaches.",
+      "type": "object",
+      "properties": {
+        "hostId": { "type": "string", "description": "UID of the host coach." },
+        "starterId": { "type": "string", "description": "UID of the coach who started the race." },
+        "startTime": { "type": "number", "description": "Server timestamp (ms) when the race started." },
+        "status": { "type": "string", "enum": ["waiting", "active", "finished"], "description": "Current status of the race." },
+        "raceType": { "type": "string", "description": "The selected race distance." },
+        "createdAt": { "type": "number", "description": "When the session was created." }
+      },
+      "required": ["hostId", "status", "createdAt"]
+    },
+    "Runner": {
+      "title": "Runner",
+      "description": "An athlete in a race session.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the runner." },
+        "athleteId": { "type": "string", "description": "Reference to a roster athlete." },
+        "isRunning": { "type": "boolean", "description": "Whether the runner's timer is active." },
+        "startTime": { "type": "number", "description": "Timestamp when this runner started." },
+        "lastLapTime": { "type": "number", "description": "Elapsed time at last lap." },
+        "lastSplitTime": { "type": "number", "description": "Elapsed time at last split." },
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["Split", "Lap", "Finish"] },
+              "time": { "type": "number", "description": "Duration of the segment." },
+              "cumulativeTime": { "type": "number", "description": "Total time at this point." },
+              "formatted": { "type": "string" },
+              "formattedCumulative": { "type": "string" },
+              "number": { "type": "integer" },
+              "pace": { "type": "string" },
+              "prDelta": { "type": "number", "description": "Difference from PR pace in ms." }
+            }
+          }
+        }
+      },
+      "required": ["name"]
+    },
+    "RosterAthlete": {
+      "title": "Roster Athlete",
+      "description": "An athlete in the team roster.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "prs": {
+          "type": "object",
+          "additionalProperties": { "type": "number" },
+          "description": "PR times in ms for each RaceType."
+        }
+      },
+      "required": ["name"]
+    }
+  },
+  "firestore": {
+    "/sessions/{pin}": {
+      "schema": "Session",
+      "description": "Active race sessions indexed by a 4-digit PIN."
+    },
+    "/sessions/{pin}/runners/{runnerId}": {
+      "schema": "Runner",
+      "description": "Runners participating in a specific session."
+    },
+    "/sessions/{pin}/roster/{athleteId}": {
+      "schema": "RosterAthlete",
+      "description": "The team roster for this session."
+    },
+    "/users/{uid}/roster/{athleteId}": {
+      "schema": "RosterAthlete",
+      "description": "The persistent team roster for a specific coach."
+    }
+  }
+}
