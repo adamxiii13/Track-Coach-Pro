@@ -17,7 +17,7 @@ Built by a high school track coach and data analyst, **Track Coach Pro** is a sc
 * **Google Sheets Integration:** Export complete race logs, lap splits, and pace data directly to a Google Sheet with a single click for permanent record-keeping and long-term athlete development tracking.
 
 ## 💻 Technical Stack
-* **Language:** Python
+* Tech Stack: TypeScript, Node.js, Firebase, Vite
 * **Core Logic & Development:** Google AI Studio
 * **Deployment:** Google Cloud Run
 * **Data Export:** Google Sheets API
