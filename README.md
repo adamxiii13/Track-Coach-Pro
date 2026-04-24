@@ -23,5 +23,4 @@ Built by a high school track coach and data analyst, **Track Coach Pro** is a sc
 * **Data Export:** Google Sheets API
 
 ## 👨‍🏫 About the Developer
-## 👨‍🏫 About the Developer
 As a high school track coach managing everything from sprinters to distance runners, I realized that the technology we had on the field wasn't keeping up with the reality of a busy track meet. I am also a Lead Data Analyst, so rather than waiting for a better app, I built one. Drawing on my own experience as a coach and on other coaches' feedback about what they look for in an app, I designed Track Coach Pro to bring professional-grade, multi-point data collection to any coaching staff with a smartphone.
